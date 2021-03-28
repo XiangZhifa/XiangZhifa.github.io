@@ -79,13 +79,15 @@
 
 
 
+<meta name="description" content="函数声明法123function run():string &amp;#123;  return &amp;#x27;run&amp;#x27;&amp;#125;   匿名函数123let func &#x3D; ():number&#x3D;&gt;&amp;#123;  return 123&amp;#125;   定义方法传参123function getInfo(name:string,age:number):string &amp;#123;  return">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TypeScript中的函数">
 <meta property="og:url" content="https://xiangzhifa.github.io/2021/03/28/TsFunction/index.html">
 <meta property="og:site_name" content="Jeffery&#39;s Blog">
+<meta property="og:description" content="函数声明法123function run():string &amp;#123;  return &amp;#x27;run&amp;#x27;&amp;#125;   匿名函数123let func &#x3D; ():number&#x3D;&gt;&amp;#123;  return 123&amp;#125;   定义方法传参123function getInfo(name:string,age:number):string &amp;#123;  return">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-28T05:55:41.482Z">
-<meta property="article:modified_time" content="2021-03-28T08:21:10.940Z">
+<meta property="article:modified_time" content="2021-03-28T09:40:55.634Z">
 <meta property="article:author" content="Jeffery Xiang">
 <meta name="twitter:card" content="summary">
 
@@ -329,7 +331,25 @@
       
 
       
-        
+        <h3 id="函数声明法"><a href="#函数声明法" class="headerlink" title="函数声明法"></a>函数声明法</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>):<span class="title">string</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;run&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> func = ():<span class="function"><span class="params">number</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">123</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="定义方法传参"><a href="#定义方法传参" class="headerlink" title="定义方法传参"></a>定义方法传参</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInfo</span>(<span class="params">name:<span class="built_in">string</span>,age:<span class="built_in">number</span></span>):<span class="title">string</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;name&#125;</span>--<span class="subst">$&#123;age&#125;</span>`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="可选参数"><a href="#可选参数" class="headerlink" title="可选参数"></a>可选参数</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInfo</span>(<span class="params">name:<span class="built_in">string</span>,age?:<span class="built_in">number</span></span>):<span class="title">string</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!!age) &#123;</span><br><span class="line">    <span class="keyword">return</span>  <span class="string">`<span class="subst">$&#123;name&#125;</span>--<span class="subst">$&#123;age&#125;</span>`</span></span><br><span class="line"> &#125;  </span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;name&#125;</span>--年龄保密`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getInfo(<span class="string">&#x27;张三&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInfo</span>(<span class="params">name:<span class="built_in">string</span>,age:<span class="built_in">number</span>=<span class="number">18</span></span>):<span class="title">string</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;name&#125;</span>--<span class="subst">$&#123;age&#125;</span>`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果不传入age，age为默认值18</span></span><br><span class="line">getInfo(<span class="string">&#x27;张三&#x27;</span>)</span><br><span class="line"><span class="comment">//如果传入age，age为传入值</span></span><br><span class="line">getInfo(<span class="string">&#x27;张三&#x27;</span>,<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">...params:<span class="built_in">number</span>[]</span>):<span class="title">number</span> </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span></span><br><span class="line">  params.forEach(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span><br><span class="line">    sum+=item</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> sum  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setLessOption</span>(<span class="params">config:<span class="built_in">object</span></span>):<span class="title">object</span> </span></span><br><span class="line"><span class="function"><span class="function"><span class="keyword">function</span> <span class="title">setLessOption</span>(<span class="params">config:<span class="built_in">object</span>,desc:<span class="built_in">string</span></span>):<span class="title">string</span></span></span></span><br><span class="line"><span class="function"><span class="function"><span class="function"><span class="keyword">function</span> <span class="title">setLessOption</span>(<span class="params">config:<span class="built_in">any</span>,desc:<span class="built_in">any</span></span>):[<span class="title">object</span>,<span class="title">string</span>]</span>&#123;</span></span></span><br><span class="line"><span class="function"><span class="function">  <span class="title">return</span> [<span class="title">config</span>,<span class="title">desc</span>]</span></span></span><br><span class="line"><span class="function"><span class="function">&#125;</span></span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -413,8 +433,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -469,6 +498,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">函数声明法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">匿名函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%96%B9%E6%B3%95%E4%BC%A0%E5%8F%82"><span class="nav-number">3.</span> <span class="nav-text">定义方法传参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E5%8F%82%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">可选参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"><span class="nav-number">5.</span> <span class="nav-text">默认参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0"><span class="nav-number">6.</span> <span class="nav-text">剩余参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="nav-number">7.</span> <span class="nav-text">函数重载</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
