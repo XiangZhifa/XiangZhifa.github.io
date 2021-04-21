@@ -239,6 +239,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangzhifa.github.io/2021/03/28/TsDataElement/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/RonaldoAvatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jeffery's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/03/28/TsDataElement/" itemprop="url">TypeScript中的数据类型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-28T13:52:39+08:00">
+                2021-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TypeScript/" itemprop="url" rel="index">
+                    <span itemprop="name">TypeScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="boolean-类型"><a href="#boolean-类型" class="headerlink" title="boolean 类型"></a>boolean 类型</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> flag:<span class="built_in">boolean</span> = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="number-类型"><a href="#number-类型" class="headerlink" title="number 类型"></a>number 类型</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a:<span class="built_in">number</span> = <span class="number">123</span>;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="string-类型"><a href="#string-类型" class="headerlink" title="string 类型"></a>string 类型</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str:<span class="built_in">string</span> = <span class="string">&#x27;abc&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="array-类型"><a href="#array-类型" class="headerlink" title="array 类型"></a>array 类型</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr1:<span class="built_in">number</span>[] = [];</span><br><span class="line"><span class="keyword">let</span> arr2:<span class="built_in">Array</span>&lt;<span class="built_in">number</span>&gt; = [];</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="tuple-类型-元组"><a href="#tuple-类型-元组" class="headerlink" title="tuple 类型(元组)"></a>tuple 类型(元组)</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 元组：定义数组中每个元素的类型</span></span><br><span class="line"><span class="keyword">let</span> arr:[<span class="built_in">string</span>,<span class="built_in">number</span>,<span class="built_in">boolean</span>] = [<span class="string">&#x27;ts&#x27;</span>,<span class="number">3.22</span>,<span class="literal">true</span>]</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="enum-类型-枚举"><a href="#enum-类型-枚举" class="headerlink" title="enum 类型(枚举)"></a>enum 类型(枚举)</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* enum类型，适用于以下场景:</span></span><br><span class="line"><span class="comment">* pay_status 0 准备支付  1 支付中  2 支付成功</span></span><br><span class="line"><span class="comment">* </span></span><br><span class="line"><span class="comment">* !!!注意 枚举类型不赋值时，默认为索引值 0,1,2,3,4……</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">enum</span> pay_status &#123;</span><br><span class="line">  ready = <span class="number">0</span>,</span><br><span class="line">  pending = <span class="number">1</span>,</span><br><span class="line">  success = <span class="number">2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="any-类型"><a href="#any-类型" class="headerlink" title="any 类型"></a>any 类型</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> test:<span class="built_in">any</span> = <span class="number">123</span>;</span><br><span class="line">test = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="null-和-undefined-never类型的子类型"><a href="#null-和-undefined-never类型的子类型" class="headerlink" title="null 和 undefined(never类型的子类型)"></a>null 和 undefined(never类型的子类型)</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* num 赋值后为 number 类型</span></span><br><span class="line"><span class="comment">* num 只声明不赋值为 undefined 类型</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">let</span> num:<span class="built_in">number</span>|<span class="literal">undefined</span>;</span><br><span class="line"><span class="built_in">console</span>.log(num)</span><br><span class="line"></span><br><span class="line"><span class="comment">//一个变量可能是 number类型 /undefined类型 / null类型</span></span><br><span class="line"><span class="keyword">let</span> param:<span class="built_in">number</span>|<span class="literal">undefined</span>|<span class="literal">null</span></span><br><span class="line"><span class="comment">//此时param赋值，必须为 number / undefined / null</span></span><br><span class="line">param = <span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="void-类型-用于表示方法没有返回值"><a href="#void-类型-用于表示方法没有返回值" class="headerlink" title="void 类型(用于表示方法没有返回值)"></a>void 类型(用于表示方法没有返回值)</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>):<span class="title">void</span> </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;running&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="never-类型-指其他类型，包含null和undefined"><a href="#never-类型-指其他类型，包含null和undefined" class="headerlink" title="never 类型(指其他类型，包含null和undefined)"></a>never 类型(指其他类型，包含null和undefined)</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* never类型代表从来不会出现的值</span></span><br><span class="line"><span class="comment">* 这就意味着，never类型的变量，只能被never类型赋值</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">let</span> param:<span class="literal">undefined</span>;</span><br><span class="line"><span class="comment">//param = 123;  报错，param的值只能为undefined</span></span><br><span class="line">param = <span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://xiangzhifa.github.io/2021/03/23/HexoInit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -433,7 +601,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
